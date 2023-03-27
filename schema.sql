@@ -1,5 +1,7 @@
+-- Creeate database
 CREATE DATABASE vet_clinic;
 
+-- Create table
 CREATE TABLE animals (
     id INT GENERATED ALWAYS AS IDENTITY,
     name VARCHAR(100) NOT NULL,
