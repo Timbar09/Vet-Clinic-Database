@@ -22,6 +22,7 @@ SELECT * from animals WHERE name != 'Gabumon';
 -- Animals that weigh 10.4 kg to 17.3 kg
 SELECT * from animals WHERE weight_kg BETWEEN 10.4 AND 17.3;
 
+
 -- Update the species column to 'unspecified' inside a transaction.
 BEGIN;
 UPDATE animals SET species = 'unspecified';
@@ -34,6 +35,7 @@ ROLLBACK;
 
 -- Verify that changes were rolled back.
 SELECT * FROM animals;
+
 
 -- Inside a transaction:
 BEGIN;
@@ -48,4 +50,17 @@ UPDATE animals SET species = 'pokemon' WHERE species IS NULL;
 COMMIT;
 
 -- Verify that change was made and persists after commit.
+SELECT * FROM animals;
+
+
+-- Inside a transaction:
+BEGIN;
+
+-- Delete all records in the animals table.
+DELETE FROM animals;
+
+-- Roll back the transaction.
+ROLLBACK;
+
+-- Verify if all records in the animals table still exists.
 SELECT * FROM animals;
