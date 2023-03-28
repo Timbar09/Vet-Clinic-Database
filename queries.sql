@@ -22,7 +22,15 @@ SELECT * from animals WHERE name != 'Gabumon';
 -- Animals that weigh 10.4 kg to 17.3 kg
 SELECT * from animals WHERE weight_kg BETWEEN 10.4 AND 17.3;
 
+-- Update the species column to 'unspecified' inside a transaction.
+BEGIN;
+UPDATE animals SET species = 'unspecified';
 
+-- Verify that changes were made.
+SELECT * FROM animals;
 
+-- Roll back the changes.
+ROLLBACK;
 
-
+-- Verify that changes were rolled back.
+SELECT * FROM animals;
