@@ -16,10 +16,18 @@ CREATE TABLE animals (
 ALTER TABLE animals ADD COLUMN species VARCHAR(100);
 
 
--- Create a table named owners
+-- Create owners table
 CREATE TABLE owners (
     id INT GENERATED ALWAYS AS IDENTITY,
     full_name VARCHAR(100) NOT NULL,
     age INT NOT NULL,
+    PRIMARY KEY (id)
+);
+
+
+-- Create species table
+CREATE TABLE species (
+    id INT GENERATED ALWAYS AS IDENTITY,
+    name VARCHAR(100) NOT NULL,
     PRIMARY KEY (id)
 );
