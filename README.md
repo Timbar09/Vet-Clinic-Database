@@ -85,8 +85,6 @@ Clone this repository to your desired folder:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Update animals table data**
-- [ ] **Query multiple tables**
 - [ ] **Add "join table" for visits**
 - [ ] **Implement database performance audit**
 - [ ] **Add database schema diagram**
