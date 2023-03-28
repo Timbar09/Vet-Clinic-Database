@@ -34,3 +34,18 @@ ROLLBACK;
 
 -- Verify that changes were rolled back.
 SELECT * FROM animals;
+
+-- Inside a transaction:
+BEGIN;
+
+-- Update the species column to 'digimon' for all animals that have a name ending in 'mon'.
+UPDATE animals SET species = 'digimon' WHERE name LIKE '%mon';
+
+-- Update the species column to 'pokemon' for all animals that don't have species already set.
+UPDATE animals SET species = 'pokemon' WHERE species IS NULL;
+
+-- Commit the transaction.
+COMMIT;
+
+-- Verify that change was made and persists after commit.
+SELECT * FROM animals;
