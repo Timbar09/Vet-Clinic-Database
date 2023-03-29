@@ -49,3 +49,13 @@ ALTER TABLE animals ADD CONSTRAINT fk_animals_owners FOREIGN KEY (owner_id) REFE
 
 -- Commit the transaction.
 COMMIT;
+
+
+-- Create vets table
+CREATE TABLE vets (
+    id INT GENERATED ALWAYS AS IDENTITY,
+    name VARCHAR(100) NOT NULL,
+    age INT NOT NULL,
+    date_of_graduation DATE,
+    PRIMARY KEY (id)
+);
