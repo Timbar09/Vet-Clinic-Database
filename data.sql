@@ -97,3 +97,22 @@ UPDATE animals SET owner_id = 4 WHERE name = 'Charmander' OR name = 'Squirtle' O
 
 -- Dean Winchester owns Angemon and Boarmon.
 UPDATE animals SET owner_id = 5 WHERE name = 'Angemon' OR name = 'Boarmon';
+
+
+-- Insert data for vets:
+
+BEGIN;
+
+-- Dr. William Tatcher
+INSERT INTO vets (name, age, date_of_graduation) VALUES ('William Tatcher', 45, '2000-04-23');
+
+-- Dr. Maisy Smith
+INSERT INTO vets (name, age, date_of_graduation) VALUES ('Maisy Smith', 26, '2019-01-17');
+
+-- Dr. Stephanie Mendez
+INSERT INTO vets (name, age, date_of_graduation) VALUES ('Stephanie Mendez', 64, '1981-05-04');
+
+-- Dr. Jack Harkness
+INSERT INTO vets (name, age, date_of_graduation) VALUES ('Jack Harkness', 38, '2008-06-08');
+
+COMMIT;
