@@ -49,3 +49,34 @@ ALTER TABLE animals ADD CONSTRAINT fk_animals_owners FOREIGN KEY (owner_id) REFE
 
 -- Commit the transaction.
 COMMIT;
+
+
+-- Create vets table
+CREATE TABLE vets (
+    id INT GENERATED ALWAYS AS IDENTITY,
+    name VARCHAR(100) NOT NULL,
+    age INT NOT NULL,
+    date_of_graduation DATE,
+    PRIMARY KEY (id)
+);
+
+
+-- Create a "join table" called specializations for vets and species tables.
+CREATE TABLE specializations (
+    vet_id INT,
+    species_id INT,
+    CONSTRAINT fk_specializations_vets FOREIGN KEY (vet_id) REFERENCES vets (id),
+    CONSTRAINT fk_specializations_species FOREIGN KEY (species_id) REFERENCES species (id)
+);
+
+
+--  Create a "join table" called visits for vets and animals tables.
+CREATE TABLE visits (
+    id INT GENERATED ALWAYS AS IDENTITY,
+    animal_id INT,
+    vet_id INT,
+    date_of_visit DATE,
+    CONSTRAINT fk_visits_animals FOREIGN KEY (animal_id) REFERENCES animals (id),
+    CONSTRAINT fk_visits_vets FOREIGN KEY (vet_id) REFERENCES vets (id),
+    PRIMARY KEY (id)
+);
