@@ -59,3 +59,12 @@ CREATE TABLE vets (
     date_of_graduation DATE,
     PRIMARY KEY (id)
 );
+
+
+-- Create a "join table" called specializations for vets and species tables.
+CREATE TABLE specializations (
+    vet_id INT,
+    species_id INT,
+    CONSTRAINT fk_specializations_vets FOREIGN KEY (vet_id) REFERENCES vets (id),
+    CONSTRAINT fk_specializations_species FOREIGN KEY (species_id) REFERENCES species (id)
+);
