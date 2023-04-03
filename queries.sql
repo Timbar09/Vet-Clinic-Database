@@ -181,14 +181,24 @@ WHERE owner_id = 4 GROUP BY species.name ORDER BY COUNT(*) DESC LIMIT 1;
 
 -- Optimizing the database:
 
+-- query 1
+
 SELECT COUNT(*) FROM visits where animal_id = 4;
 
 -- optimise
 
 CREATE INDEX animal_id_index ON visits (animal_id);
+-- query 2
 
 SELECT * FROM visits where vet_id = 2;
 
 -- optimise
 
 CREATE INDEX vet_id_index ON visits (vet_id);
+--query 3
+
+SELECT * FROM owners where email = 'owner_18327@mail.com';
+
+-- optimise
+
+CREATE INDEX email_index ON owners (email);
