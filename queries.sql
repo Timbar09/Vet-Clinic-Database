@@ -177,3 +177,12 @@ WHERE species.id != animals.species_id;
 -- What specialty should Maisy Smith consider getting? Look for the species she gets the most.
 SELECT species.name, COUNT(*) FROM animals JOIN species ON animals.species_id = species.id
 WHERE owner_id = 4 GROUP BY species.name ORDER BY COUNT(*) DESC LIMIT 1;
+
+
+-- Optimizing the database:
+
+SELECT COUNT(*) FROM visits where animal_id = 4;
+
+-- optimise
+
+CREATE INDEX animal_id_index ON visits (animal_id);
