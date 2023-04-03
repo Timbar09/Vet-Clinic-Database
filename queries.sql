@@ -186,3 +186,9 @@ SELECT COUNT(*) FROM visits where animal_id = 4;
 -- optimise
 
 CREATE INDEX animal_id_index ON visits (animal_id);
+
+SELECT * FROM visits where vet_id = 2;
+
+-- optimise
+
+CREATE INDEX vet_id_index ON visits (vet_id);
