@@ -6,6 +6,7 @@ CREATE TABLE medical_histories(
     patient_id INT NOT NULL,
     status VARCHAR(255) NOT NULL,
     PRIMARY KEY (id),
+    CONSTRAINT fk_medical_histories_patients FOREIGN KEY (patient_id) REFERENCES patients (id),
 );
 
 -- Create treatments table
