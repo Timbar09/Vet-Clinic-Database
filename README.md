@@ -21,6 +21,8 @@
 
 # 📖 Vet Clinic Database <a name="about-project"></a>
 
+<img src='./vet-clinic-schema-diagram.png' />
+
 In this project, I used a relational database to create the initial data structure for a vet clinic. The database has a table that stores animal data. Data can be inserted into the table, and the table can be queried as well.
 
 ## 🛠 Built With <a name="built-with"></a>
@@ -85,7 +87,7 @@ Clone this repository to your desired folder:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Add database schema diagram**
+- [ ] **Add more Tables**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
